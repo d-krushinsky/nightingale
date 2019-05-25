@@ -23,7 +23,7 @@ public abstract class NInput implements KeyListener{
 	 */
 	public abstract void toggleKey(int keyCode, boolean isPressed);
 	
-	public class Key{
+	public class NKey{
 		private boolean pressed = false;
 		private boolean clicked = false;
 		
