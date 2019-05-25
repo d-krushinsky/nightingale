@@ -8,12 +8,12 @@ import java.awt.Toolkit;
 import java.awt.geom.AffineTransform;
 import java.awt.image.BufferStrategy;
 
-public class nCanvas extends Canvas implements Runnable{
+public class NCanvas extends Canvas implements Runnable{
 	private static final long serialVersionUID = 1L;
 	
-	private Drawer drawer = null;
+	private NDrawer drawer = null;
 	
-	public nCanvas(Drawer drawer) {
+	public NCanvas(NDrawer drawer) {
 		this.drawer = drawer;
 	}
 	

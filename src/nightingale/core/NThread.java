@@ -1,13 +1,13 @@
 package nightingale.core;
 
-public class nThread extends java.lang.Thread {
+public class NThread extends java.lang.Thread {
 
 	private Runnable fixRunnable;
 
 	public int maxRate = 60;
 	private int TICKS;
 	
-	public nThread(String name, Runnable fixRunnable){
+	public NThread(String name, Runnable fixRunnable){
 		this.fixRunnable = fixRunnable;
 		setName(name);
 	}
