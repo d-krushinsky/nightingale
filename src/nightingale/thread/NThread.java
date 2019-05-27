@@ -1,4 +1,4 @@
-package nightingale.core;
+package nightingale.thread;
 
 public class NThread extends java.lang.Thread {
 
