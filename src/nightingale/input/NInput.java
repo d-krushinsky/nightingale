@@ -2,20 +2,56 @@ package nightingale.input;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 
-public abstract class NInput implements KeyListener{
+public abstract class NInput implements KeyListener, MouseListener, MouseMotionListener{
+	private NMouse mouse = null;
+	
+	public void setMouse(NMouse mouse) {
+		this.mouse = mouse;
+	}
+	
+	public NMouse getMouse() {
+		return mouse;
+	}
+	
 	@Override
-	public void keyPressed(KeyEvent e) {
+	public final void keyPressed(KeyEvent e) {
 		toggleKey(e.getKeyCode(), false);
 	}
 
 	@Override
-	public void keyReleased(KeyEvent e) {
+	public final void keyReleased(KeyEvent e) {
 		toggleKey(e.getKeyCode(), false);
 	}
 
 	@Override
-	public void keyTyped(KeyEvent e) {}	
+	public void mouseDragged(MouseEvent e) {
+		mouse.move(e.getX(), e.getY());
+	}
+
+	@Override
+	public void mouseMoved(MouseEvent e) {
+		mouse.move(e.getX(), e.getY());
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		if(e.getButton() == MouseEvent.BUTTON1)
+			mouse.leftButton = true;
+		if(e.getButton() == MouseEvent.BUTTON3)
+			mouse.rightButton = true;
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		if(e.getButton() == MouseEvent.BUTTON1)
+			mouse.leftButton = false;
+		if(e.getButton() == MouseEvent.BUTTON3)
+			mouse.rightButton = false;
+	}
 	
 	/**
 	 * @param keyCode
@@ -23,4 +59,14 @@ public abstract class NInput implements KeyListener{
 	 */
 	public abstract void toggleKey(int keyCode, boolean isPressed);
 	
+	
+	//Unuse
+	@Override
+	public final void mouseClicked(MouseEvent arg0) {}
+	@Override
+	public final void mouseEntered(MouseEvent arg0) {}
+	@Override
+	public final void mouseExited(MouseEvent arg0) {}
+	@Override
+	public final void keyTyped(KeyEvent e) {}
 }
