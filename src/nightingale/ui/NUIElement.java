@@ -24,6 +24,8 @@ public abstract class NUIElement {
 	protected boolean active  = true;
 	
 	// Getters
+	public String getName() { return name; }
+	
 	public int getX() {
 		return (cam != null)?((int)cam.getX(x)):(x);
 	}
