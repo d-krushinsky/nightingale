@@ -20,7 +20,6 @@ public abstract class NUIElement {
 	protected boolean visible = true;
 	protected boolean active  = true;
 	
-	
 	// Getters
 	public int getX() {
 		return (cam != null)?((int)cam.getX(x)):(x);
