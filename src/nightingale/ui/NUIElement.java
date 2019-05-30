@@ -15,7 +15,10 @@ public abstract class NUIElement {
 	protected int width, height;
 	
 	protected NCamera cam = new NCamera();
-	protected NActionListener listener;
+	protected NActionListener listener = new NActionListener() {
+		@Override
+		public void actionPerform(NUIElement element) {}
+	};
 	
 	protected boolean visible = true;
 	protected boolean active  = true;
