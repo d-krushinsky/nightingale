@@ -2,7 +2,6 @@ package nightingale.input;
 
 //BAD
 public class NMouse {
-	
 	protected NKey leftButton = new NKey();
 	protected NKey rightButton =  new NKey();
 	
