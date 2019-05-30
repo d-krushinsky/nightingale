@@ -3,11 +3,11 @@ package nightingale.input;
 //BAD
 public class NMouse {
 	
+	protected NKey leftButton = new NKey();
+	protected NKey rightButton =  new NKey();
+	
 	protected int x;
 	protected int y;
-	
-	protected boolean leftButton = false;
-	protected boolean rightButton = false;
 	
 	public int getX() {
 		return x;
@@ -18,11 +18,19 @@ public class NMouse {
 	}
 	
 	public boolean isLeftButtonPressed() {
-		return leftButton;
+		return leftButton.isPressed();
 	}
 	
 	public boolean isRightButtonPressed() {
-		return rightButton;
+		return rightButton.isPressed();
+	}
+	
+	public boolean isLeftButtonClicked() {
+		return leftButton.isClicked();
+	}
+	
+	public boolean isRightButtonClicked() {
+		return rightButton.isClicked();
 	}
 	
 	protected void move(int x, int y) {

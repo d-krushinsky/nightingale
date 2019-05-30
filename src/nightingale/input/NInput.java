@@ -40,17 +40,17 @@ public abstract class NInput implements KeyListener, MouseListener, MouseMotionL
 	@Override
 	public void mousePressed(MouseEvent e) {
 		if(e.getButton() == MouseEvent.BUTTON1)
-			mouse.leftButton = true;
+			mouse.leftButton.toggle(true);
 		if(e.getButton() == MouseEvent.BUTTON3)
-			mouse.rightButton = true;
+			mouse.rightButton.toggle(true);
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		if(e.getButton() == MouseEvent.BUTTON1)
-			mouse.leftButton = false;
+			mouse.leftButton.toggle(false);
 		if(e.getButton() == MouseEvent.BUTTON3)
-			mouse.rightButton = false;
+			mouse.rightButton.toggle(false);
 	}
 	
 	/**
