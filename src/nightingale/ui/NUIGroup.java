@@ -3,6 +3,7 @@ package nightingale.ui;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.geom.AffineTransform;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -35,11 +36,22 @@ public class NUIGroup {
 			i++;
 		} while(elements.containsKey(i==0?_name:_name+"_"+i));
 		elements.put(i==0?_name:_name+"_"+i, element);
+		elements.get(i==0?_name:_name+"_"+i).name = i==0?_name:_name+"_"+i;
 	}
 	
 	public void removeElement(String name) {
 		if(!elements.containsKey(name)) throw new NullPointerException();
 		else elements.remove(name);
+	}
+	
+	public NUIElement getElement(String name) {
+		return elements.get(name);
+	}
+	
+	public ArrayList<NUIElement> getElements(){
+		ArrayList<NUIElement> elements = new ArrayList<NUIElement>();
+		this.elements.forEach((name, element) -> elements.add(element));
+		return elements;
 	}
 	
 	public void perform(NInput in) {
