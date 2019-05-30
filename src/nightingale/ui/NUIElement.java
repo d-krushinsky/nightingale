@@ -106,6 +106,10 @@ public abstract class NUIElement {
 	
 	public void setCamera(NCamera cam) { this.cam = cam; }
 	
+	public void setActionListener(NActionListener listener) {
+		this.listener = listener;
+	}
+	
 	public boolean contains(int x, int y) {
 		if( new Rectangle(getX(), getY(), getWidth(), getHeight()).contains(x, y) ) return true;
 		return false;

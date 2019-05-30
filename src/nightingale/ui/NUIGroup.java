@@ -19,15 +19,29 @@ public class NUIGroup {
 	private boolean visible = true;
 	private boolean active = true;
 	
-	// group getters
+	// Getters
 	public boolean isVisible() { return visible; }
 	public boolean isActive()  { return  active; }
 	public NCamera getCamera() { return     cam; }
 	
-	// group setters
+	public NUIElement getElement(String name) {
+		return elements.get(name);
+	}
+	
+	public ArrayList<NUIElement> getElements(){
+		ArrayList<NUIElement> elements = new ArrayList<NUIElement>();
+		this.elements.forEach((name, element) -> elements.add(element));
+		return elements;
+	}
+	
+	// Setters
 	public void setVisible(boolean visible) { this.visible = visible; }
 	public void setActive(boolean active) { this.active = active; }
 	public void setCamera(NCamera cam) { this.cam = cam; }
+	
+	public void setActionListener(NActionListener listener) {
+		elements.forEach((name, element) -> element.setActionListener(listener));
+	}
 	
 	public void addElement(String name, NUIElement element) {
 		String _name = name;
@@ -42,16 +56,6 @@ public class NUIGroup {
 	public void removeElement(String name) {
 		if(!elements.containsKey(name)) throw new NullPointerException();
 		else elements.remove(name);
-	}
-	
-	public NUIElement getElement(String name) {
-		return elements.get(name);
-	}
-	
-	public ArrayList<NUIElement> getElements(){
-		ArrayList<NUIElement> elements = new ArrayList<NUIElement>();
-		this.elements.forEach((name, element) -> elements.add(element));
-		return elements;
 	}
 	
 	public void perform(NInput in) {
