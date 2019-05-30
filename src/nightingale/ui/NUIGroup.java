@@ -55,10 +55,12 @@ public class NUIGroup {
 	}
 	
 	public void perform(NInput in) {
-		elements.forEach((name, element) -> element.perform(in));
+		if(isActive())
+			elements.forEach((name, element) -> element.perform(in));
 	}
 	
 	public void draw(Graphics g, Graphics2D g2d, AffineTransform at) {
-		elements.forEach((name, element) -> element.draw(g, g2d, at));
+		if(isVisible())
+			elements.forEach((name, element) -> element.draw(g, g2d, at));
 	}
 }
