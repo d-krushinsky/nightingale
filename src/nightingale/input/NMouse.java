@@ -8,29 +8,14 @@ public class NMouse {
 	protected int x;
 	protected int y;
 	
-	public int getX() {
-		return x;
-	}
+	public int getX() { return x; }
+	public int getY() { return y; }
 	
-	public int getY() {
-		return y;
-	}
+	public boolean isLeftButtonPressed()  { return  leftButton.isPressed(); }
+	public boolean isRightButtonPressed() {	return rightButton.isPressed(); }
 	
-	public boolean isLeftButtonPressed() {
-		return leftButton.isPressed();
-	}
-	
-	public boolean isRightButtonPressed() {
-		return rightButton.isPressed();
-	}
-	
-	public boolean isLeftButtonClicked() {
-		return leftButton.isClicked();
-	}
-	
-	public boolean isRightButtonClicked() {
-		return rightButton.isClicked();
-	}
+	public boolean isLeftButtonClicked()  { return  leftButton.isClicked(); }
+	public boolean isRightButtonClicked() { return rightButton.isClicked(); }
 	
 	protected void move(int x, int y) {
 		this.x = x;
