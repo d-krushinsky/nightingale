@@ -82,7 +82,7 @@ public abstract class NUIElement {
 	}
 	
 	public void setRealX(int x) { this.x = x; }
-	public void setRealY(int x) { this.x = x; }
+	public void setRealY(int y) { this.y = y; }
 	
 	public void setRealXY(int x, int y) {
 		setRealX(x);
