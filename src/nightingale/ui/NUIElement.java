@@ -2,8 +2,10 @@ package nightingale.ui;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Rectangle;
 import java.awt.geom.AffineTransform;
 
+import nightingale.input.NInput;
 import nightingale.util.NCamera;
 
 public abstract class NUIElement {
@@ -13,6 +15,7 @@ public abstract class NUIElement {
 	protected int width, height;
 	
 	protected NCamera cam = new NCamera();
+	protected NActionListener listener;
 	
 	protected boolean visible = true;
 	protected boolean active  = true;
@@ -99,6 +102,16 @@ public abstract class NUIElement {
 	
 	public void setCamera(NCamera cam) { this.cam = cam; }
 	
-	public abstract void perform();
+	public boolean contains(int x, int y) {
+		if( new Rectangle(getX(), getY(), getWidth(), getHeight()).contains(x, y) ) return true;
+		return false;
+	}
+	
+	public boolean containsByRealSize(int x, int y) {
+		if( new Rectangle(getRealX(), getRealY(), getRealWidth(), getRealHeight()).contains(x, y) ) return true;
+		return false;
+	}
+	
+	public abstract void perform(NInput input);
 	public abstract void draw(Graphics g, Graphics2D g2d, AffineTransform at);
 }

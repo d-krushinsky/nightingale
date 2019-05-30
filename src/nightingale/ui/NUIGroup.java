@@ -6,6 +6,7 @@ import java.awt.geom.AffineTransform;
 import java.util.HashMap;
 import java.util.Map;
 
+import nightingale.input.NInput;
 import nightingale.util.NCamera;
 
 public class NUIGroup {
@@ -41,8 +42,8 @@ public class NUIGroup {
 		else elements.remove(name);
 	}
 	
-	public void perform() {
-		elements.forEach((name, element) -> element.perform());
+	public void perform(NInput in) {
+		elements.forEach((name, element) -> element.perform(in));
 	}
 	
 	public void draw(Graphics g, Graphics2D g2d, AffineTransform at) {
