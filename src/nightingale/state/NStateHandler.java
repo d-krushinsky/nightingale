@@ -19,8 +19,10 @@ public class NStateHandler {
 	public NState getCurrentState() { return currentState; }
 	
 	public void setState(String name) {
-		if(states.containsKey(name))
+		if(states.containsKey(name)) {
+			states.get(name).install();
 			currentState = states.get(name);
+		}
 		//else
 		//	NLogger.push("States map does not contains '"+name+"' state.");
 	}
