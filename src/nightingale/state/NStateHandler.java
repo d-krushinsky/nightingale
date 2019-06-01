@@ -16,6 +16,8 @@ public class NStateHandler {
 			currentState = states.get(name);
 	}
 	
+	public NState getCurrentState() { return currentState; }
+	
 	public void setState(String name) {
 		if(states.containsKey(name))
 			currentState = states.get(name);
