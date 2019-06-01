@@ -3,7 +3,6 @@ package nightingale.game.map;
 import nightingale.util.NCamera;
 
 public class NMap {
-
 	protected float x, y;
 	protected float width, height;
 	
@@ -76,23 +75,5 @@ public class NMap {
 		setY(y);
 		setWidth(tileWidth*tiles[0].length);
 		setHeight(tileHeight*tiles.length);
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	}	
 }
