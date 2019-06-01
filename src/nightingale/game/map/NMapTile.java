@@ -8,7 +8,12 @@ public class NMapTile extends Node{
 	protected float x, y;
 	protected float width, height;
 	
+	protected int type = 0;
+	protected int i, j;
+	
 	// Getters
+	public int getType() { return type; }
+	
 	public float getX() { return x; }
 	public float getX(NCamera cam) { return cam.getX(getX()); }
 	
@@ -34,8 +39,8 @@ public class NMapTile extends Node{
 	public void setHeight(float height) { this.height = height; }
 	public void setHeight(float height, NCamera cam) { this.height = cam.unscale(height); }
 	
-	protected int type = 0;
-	protected int i, j;
+
+
 	
 	public NMapTile(int type, int i, int j) {
 		super(i, j, true);
