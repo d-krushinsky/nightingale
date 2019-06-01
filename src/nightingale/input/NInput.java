@@ -19,7 +19,7 @@ public abstract class NInput implements KeyListener, MouseListener, MouseMotionL
 	
 	@Override
 	public final void keyPressed(KeyEvent e) {
-		toggleKey(e.getKeyCode(), false);
+		toggleKey(e.getKeyCode(), true);
 	}
 
 	@Override
