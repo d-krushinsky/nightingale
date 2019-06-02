@@ -39,14 +39,21 @@ public class NMapTile extends Node{
 	public void setHeight(float height) { this.height = height; }
 	public void setHeight(float height, NCamera cam) { this.height = cam.unscale(height); }
 	
-
-
-	
 	public NMapTile(int type, int i, int j) {
 		super(i, j, true);
 		this.type = type;
 		this.i = i;
 		this.j = j;
+	}
+	
+	public NMapTile copy() {
+		NMapTile cp = new NMapTile(type, i, j);
+		cp.x = x;
+		cp.y = y;
+		cp.walkable = walkable;
+		cp.width = width;
+		cp.height = height;
+		return cp;
 	}
 	
 	// Getters
