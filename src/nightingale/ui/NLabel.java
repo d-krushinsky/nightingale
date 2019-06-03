@@ -30,7 +30,7 @@ public class NLabel extends NUIElement{
 	public void draw(Graphics g, Graphics2D g2d, AffineTransform at) {
 		g.setColor(Color.WHITE);
 		g.drawRect(getX(), getY(), getWidth(), getHeight());
-		g.drawString(text, getX()+getWidth()/2-g.getFontMetrics().stringWidth(name)/2,
+		g.drawString(text, getX()+(getWidth()/2-g.getFontMetrics().stringWidth(text)/2),
 				getY()+getHeight()/2+g.getFont().getSize()/2);
 	}
 }
