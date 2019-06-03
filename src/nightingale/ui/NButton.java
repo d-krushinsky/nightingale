@@ -11,11 +11,25 @@ public class NButton extends NUIElement{
 
 	public static enum Status { CALM, FOCUSED, PRESSED }
 	
+	protected String text = "DEFAULT TEXT";
 	private Status status = Status.CALM;
 	
 	public NButton(int x, int y, int w, int h) {
 		this.setRealXY(x, y);
 		this.setRealSize(w, h);
+	}
+	
+	public NButton(String text, int x, int y, int w, int h) {
+		this.setRealXY(x, y);
+		this.setRealSize(w, h);
+		this.setText(text);
+	}
+	
+	
+	public String getText() { return text; }
+	
+	public void setText(String text) {
+		this.text = text;
 	}
 	
 	@Override
@@ -46,7 +60,7 @@ public class NButton extends NUIElement{
 				break;
 			}
 			g.drawRect(getX(), getY(), getWidth(), getHeight());
-			g.drawString(name, getX()+getWidth()/2-g.getFontMetrics().stringWidth(name)/2,
+			g.drawString(text, getX()+getWidth()/2-g.getFontMetrics().stringWidth(text)/2,
 					getY()+getHeight()/2+g.getFont().getSize()/2);
 		}
 	}
