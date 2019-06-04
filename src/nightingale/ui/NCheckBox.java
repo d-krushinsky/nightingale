@@ -22,6 +22,10 @@ public class NCheckBox extends NUIElement{
 	
 	public boolean isChecked() { return checked; }
 	
+	public void setChecked(boolean checked) {
+		this.checked = checked;
+	}
+	
 	@Override
 	public void perform(NInput in) {
 		if(isActive())
@@ -51,7 +55,7 @@ public class NCheckBox extends NUIElement{
 				g.setColor(Color.orange);
 				break;
 			}
-			if(checked) g.drawOval(getX(), getY(), getWidth(), getHeight());
+			if(checked) g.fillOval(getX(), getY(), getWidth(), getHeight());
 			g.drawRect(getX(), getY(), getWidth(), getHeight());
 		}
 	}
