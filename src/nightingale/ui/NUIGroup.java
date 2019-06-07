@@ -19,6 +19,8 @@ public class NUIGroup {
 	private boolean visible = true;
 	private boolean active = true;
 	
+	private NActionListener listener = null;
+	
 	// Getters
 	public boolean isVisible() { return visible; }
 	public boolean isActive()  { return  active; }
@@ -43,7 +45,8 @@ public class NUIGroup {
 	}
 	
 	public void setActionListener(NActionListener listener) {
-		elements.forEach((name, element) -> element.setActionListener(listener));
+		this.listener = listener;
+		elements.forEach((name, element) -> element.setActionListener(this.listener));
 	}
 	
 	public void addElement(String name, NUIElement element) {
@@ -55,6 +58,7 @@ public class NUIGroup {
 		elements.put(i==0?_name:_name+"_"+i, element);
 		elements.get(i==0?_name:_name+"_"+i).name = i==0?_name:_name+"_"+i;
 		elements.get(i==0?_name:_name+"_"+i).setCamera(getCamera());
+		elements.get(i==0?_name:_name+"_"+i).setActionListener(this.listener);
 	}
 	
 	public void removeElement(String name) {
