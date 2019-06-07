@@ -14,7 +14,7 @@ public abstract class NUIElement {
 	protected int x, y;
 	protected int width, height;
 	
-	protected NCamera cam = new NCamera();
+	protected NCamera cam = null;
 	protected NActionListener listener = new NActionListener() {
 		@Override
 		public void actionPerform(NUIElement element) {}

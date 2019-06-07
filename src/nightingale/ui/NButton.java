@@ -25,7 +25,6 @@ public class NButton extends NUIElement{
 		this.setText(text);
 	}
 	
-	
 	public String getText() { return text; }
 	
 	public void setText(String text) {
