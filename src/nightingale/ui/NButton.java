@@ -38,7 +38,7 @@ public class NButton extends NUIElement{
 				if(status == Status.PRESSED && !in.getMouse().isLeftButtonPressed())
 					try {
 						listener.actionPerform(this);
-					}catch(NullPointerException npe) { npe.printStackTrace(); }
+					}catch(NullPointerException npe) { }
 				status = Status.FOCUSED;
 				if(in.getMouse().isLeftButtonPressed()) status = Status.PRESSED;
 			}else if(status != Status.PRESSED || !in.getMouse().isLeftButtonPressed()) status = Status.CALM;
