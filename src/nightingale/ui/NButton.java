@@ -75,7 +75,7 @@ public class NButton extends NUIElement{
 				break;
 			case PRESSED:
 				if(pressedImage == null) {
-					g.setColor(Color.YELLOW);
+					g.setColor(Color.ORANGE);
 					g.drawRect(getX(), getY(), getWidth(), getHeight());
 				}else g.drawImage(pressedImage, getX(), getY(), getWidth(), getHeight(), null);
 				break;
