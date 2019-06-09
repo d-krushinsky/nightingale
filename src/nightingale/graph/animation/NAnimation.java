@@ -32,7 +32,7 @@ public class NAnimation {
 				(int)clip.getY(),
 				(int)clip.getWidth(),
 				(int)clip.getHeight() );
-		framesCount = sheet.getWidth() % frameWidth;
+		framesCount = sheet.getWidth() / frameWidth;
 		frames = new BufferedImage[framesCount];
 		for(int i=0;i<framesCount;i++) {
 			frames[i] = NImageFactory.cropFromImage(sheet, i*frameWidth, 0, frameWidth, sheet.getHeight());
