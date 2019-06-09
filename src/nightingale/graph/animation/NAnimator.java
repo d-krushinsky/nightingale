@@ -6,7 +6,7 @@ import java.awt.geom.AffineTransform;
 import nightingale.util.NCamera;
 
 public class NAnimator {
-
+	private NSprite sprite;
 	private NAnimation animation;
 	protected int frame = 0;
 	private int add = 1;
@@ -33,6 +33,12 @@ public class NAnimator {
 		this.animationSpeed = speedInSeconds;
 	}
 	
+	public NAnimator(NSprite sprite, float speedInSeconds) {
+		this.sprite = sprite;
+		this.animation = sprite.getAnimation(0);
+		this.animationSpeed = speedInSeconds;
+	}
+	
 	public void start() {
 		delta = 0;
 		frame = 0;
@@ -48,8 +54,8 @@ public class NAnimator {
 		stoped = false;
 	}
 	
-	public void changeAnimation(NAnimation animation) {
-		this.animation = animation;
+	public void changeAnimation(int index) {
+		this.animation = sprite.getAnimation(index);
 		start();
 	}
 	
