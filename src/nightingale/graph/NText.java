@@ -23,11 +23,10 @@ public class NText {
 		int x = 0, y = 0;
 		for(int i=0;i<symbols.length;i++) {
 			symbols[i] = NImageFactory.cropFromImage(font, x, y, width, height);
-			if(i % symbolsInRow == 0) {
+			x += width;
+			if(i != 0 && (i+1) % symbolsInRow == 0) {
 				x = 0;
 				y += height;
-			}else {
-				x += width;
 			}
 		}
 	}
