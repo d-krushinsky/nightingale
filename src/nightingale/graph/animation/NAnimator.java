@@ -27,6 +27,8 @@ public class NAnimator {
 	public void setX(float x) {	this.x = x; }
 	public void setY(float y) { this.y = y; }
 	
+	public boolean isStoped() { return stoped; }
+	
 	public NAnimator(NAnimation animation, float speedInSeconds) {
 		this.animation = animation;
 		this.animationSpeed = speedInSeconds;
