@@ -14,6 +14,8 @@ public class NText {
 	private int width, height;
 	
 	public NText(String alphabet, int width, int height, String path) {
+		this.width  = width;
+		this.height = height;
 		this.alphabet = alphabet;
 		symbols = new BufferedImage[alphabet.length()];
 		BufferedImage font = NImageFactory.loadFromFile(path);
