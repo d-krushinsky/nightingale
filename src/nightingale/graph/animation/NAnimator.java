@@ -1,6 +1,5 @@
 package nightingale.graph.animation;
 
-import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.geom.AffineTransform;
 
@@ -49,6 +48,11 @@ public class NAnimator {
 		stoped = false;
 	}
 	
+	public void changeAnimation(NAnimation animation) {
+		this.animation = animation;
+		start();
+	}
+	
 	public void update() {
 		if(stoped) {
 			delta = System.currentTimeMillis() - startTime;
@@ -70,10 +74,12 @@ public class NAnimator {
 		}
 	}
 	
-	public void draw(Graphics g, Graphics2D g2d, AffineTransform at, NCamera cam) {
-		synchronized(animation) {
-			animation.drawFrame(frame, (int)x, (int)y, g, g2d, at, cam);
-		}
+	public void draw(int x, int y, Graphics2D g2d, NCamera cam) {
+		animation.drawFrame(frame, (int)x, (int)y, g2d, cam);
+	}
+	
+	public void draw(Graphics2D g2d, AffineTransform at) {
+		animation.drawFrame(frame, g2d, at);
 	}
 	
 }
