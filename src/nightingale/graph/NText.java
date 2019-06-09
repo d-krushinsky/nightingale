@@ -13,6 +13,11 @@ public class NText {
 	private String alphabet;
 	private int width, height;
 	
+	public int getWidth()  { return  width; }
+	public int getHeight() { return height; }
+	
+	public int getStringWidth(String text) { return text.length() * width; }
+	
 	public NText(String alphabet, int width, int height, String path) {
 		this.width  = width;
 		this.height = height;
