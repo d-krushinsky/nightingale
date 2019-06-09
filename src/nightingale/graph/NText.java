@@ -1,8 +1,6 @@
 package nightingale.graph;
 
 import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 
 import nightingale.util.NCamera;
@@ -36,7 +34,7 @@ public class NText {
 		}
 	}
 	
-	public void draw(String text, int x, int y, Graphics g, Graphics2D g2d, AffineTransform at, NCamera cam) {
+	public void draw(String text, int x, int y, Graphics g, NCamera cam) {
 		int i = 0;
 		for(char symbol : text.toCharArray()) {
 			g.drawImage(

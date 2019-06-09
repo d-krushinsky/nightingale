@@ -87,5 +87,4 @@ public class NAnimator {
 	public void draw(Graphics2D g2d, AffineTransform at) {
 		animation.drawFrame(frame, g2d, at);
 	}
-	
 }

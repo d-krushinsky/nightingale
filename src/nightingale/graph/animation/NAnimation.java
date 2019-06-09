@@ -9,7 +9,6 @@ import nightingale.graph.NImageFactory;
 import nightingale.util.NCamera;
 
 public class NAnimation {
-
 	protected BufferedImage[] frames;
 	private int framesCount = 0;
 	

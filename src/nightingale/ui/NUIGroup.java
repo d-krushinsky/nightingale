@@ -1,8 +1,6 @@
 package nightingale.ui;
 
 import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.geom.AffineTransform;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -71,8 +69,8 @@ public class NUIGroup {
 			elements.forEach((name, element) -> element.perform(in));
 	}
 	
-	public void draw(Graphics g, Graphics2D g2d, AffineTransform at) {
+	public void draw(Graphics g) {
 		if(isVisible())
-			elements.forEach((name, element) -> element.draw(g, g2d, at));
+			elements.forEach((name, element) -> element.draw(g));
 	}
 }

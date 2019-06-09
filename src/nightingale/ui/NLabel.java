@@ -2,8 +2,6 @@ package nightingale.ui;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.geom.AffineTransform;
 
 import nightingale.input.NInput;
 
@@ -27,7 +25,7 @@ public class NLabel extends NUIElement{
 	public void perform(NInput input) { }
 
 	@Override
-	public void draw(Graphics g, Graphics2D g2d, AffineTransform at) {
+	public void draw(Graphics g) {
 		g.setColor(Color.WHITE);
 		g.drawRect(getX(), getY(), getWidth(), getHeight());
 		g.drawString(text, getX()+(getWidth()/2-g.getFontMetrics().stringWidth(text)/2),

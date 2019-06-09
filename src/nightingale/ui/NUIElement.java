@@ -1,9 +1,7 @@
 package nightingale.ui;
 
 import java.awt.Graphics;
-import java.awt.Graphics2D;
 import java.awt.Rectangle;
-import java.awt.geom.AffineTransform;
 
 import nightingale.input.NInput;
 import nightingale.util.NCamera;
@@ -118,5 +116,5 @@ public abstract class NUIElement {
 	}
 	
 	public abstract void perform(NInput input);
-	public abstract void draw(Graphics g, Graphics2D g2d, AffineTransform at);
+	public abstract void draw(Graphics g);
 }
