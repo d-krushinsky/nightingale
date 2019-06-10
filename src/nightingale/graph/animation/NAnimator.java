@@ -84,7 +84,7 @@ public class NAnimator {
 		animation.drawFrame(frame, (int)x, (int)y, g2d, cam);
 	}
 	
-	public void draw(Graphics2D g2d, AffineTransform at) {
-		animation.drawFrame(frame, g2d, at);
+	public void draw(Graphics2D g2d, NCamera cam, AffineTransform at) {
+		animation.drawFrame(frame, g2d, cam, at);
 	}
 }

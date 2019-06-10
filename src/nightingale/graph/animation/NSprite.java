@@ -9,7 +9,6 @@ import nightingale.graph.NImageFactory;
 import nightingale.util.NCamera;
 
 public class NSprite {
-
 	protected NAnimation[] animations;
 	
 	public NAnimation getAnimation(int index) {
@@ -31,8 +30,7 @@ public class NSprite {
 		animations[animation].drawFrame(frame, x, y, g2d, cam);
 	}
 	
-	public void draw(int animation, int frame, Graphics2D g2d, AffineTransform at) {
-		animations[animation].drawFrame(frame, g2d, at);
+	public void draw(int animation, int frame, Graphics2D g2d, NCamera cam, AffineTransform at) {
+		animations[animation].drawFrame(frame, g2d, cam, at);
 	}
-	
 }

@@ -69,7 +69,7 @@ public class NAnimation {
 				null);
 	}
 	
-	public void drawFrame(int frame, Graphics2D g2d, AffineTransform at) {
+	public void drawFrame(int frame, Graphics2D g2d, NCamera cam, AffineTransform at) {
 		g2d.drawImage(frames[frame], at, null);
 	}
 }
