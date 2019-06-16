@@ -1,6 +1,7 @@
 package nightingale.graph;
 
 import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.image.BufferedImage;
 
 import nightingale.util.NCamera;
@@ -9,6 +10,7 @@ public class NText {
 
 	private BufferedImage[] symbols;
 	private String alphabet;
+	private String path;
 	private int width, height;
 	
 	public int getWidth()  { return  width; }
@@ -20,6 +22,7 @@ public class NText {
 		this.width  = width;
 		this.height = height;
 		this.alphabet = alphabet;
+		this.path = path;
 		symbols = new BufferedImage[alphabet.length()];
 		BufferedImage font = NImageFactory.loadFromFile(path);
 		int symbolsInRow = font.getWidth()/width;
@@ -32,6 +35,17 @@ public class NText {
 				y += height;
 			}
 		}
+	}
+	
+	public NText recreate() {
+		return new NText(alphabet, width, height, path);
+	}
+	
+	public void expand(float m) {
+		width = (int)(width*m);
+		height = (int)(height*m);
+		for(int i=0;i<symbols.length;i++)
+			symbols[i] = NImageFactory.resize(symbols[i],	width, height, Image.SCALE_SMOOTH);
 	}
 	
 	public void draw(String text, int x, int y, Graphics g, NCamera cam) {

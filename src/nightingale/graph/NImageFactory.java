@@ -1,5 +1,7 @@
 package nightingale.graph;
 
+import java.awt.Graphics2D;
+import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
@@ -29,6 +31,24 @@ public abstract class NImageFactory {
 			croppedImage = new BufferedImage(16, 16, BufferedImage.TYPE_INT_ARGB);
 		}
 		return croppedImage;
+	}
+	
+	/**
+	 * @param img
+	 * @param width
+	 * @param height
+	 * @param scale - Image.SCALE_*
+	 * @return
+	 */
+	public static BufferedImage resize(BufferedImage img, int width, int height, int scale) {
+		Image tmp = img.getScaledInstance(width, height, scale);
+		BufferedImage expanded = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+
+	    Graphics2D g2d = expanded.createGraphics();
+	    g2d.drawImage(tmp, 0, 0, null);
+	    g2d.dispose();
+
+		return expanded;
 	}
 	
 }
