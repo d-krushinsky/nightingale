@@ -7,7 +7,6 @@ import java.awt.image.BufferedImage;
 import nightingale.util.NCamera;
 
 public class NText {
-
 	private BufferedImage[] symbols;
 	private String alphabet;
 	private String path;
@@ -61,5 +60,4 @@ public class NText {
 			i++;
 		}
 	}
-	
 }
