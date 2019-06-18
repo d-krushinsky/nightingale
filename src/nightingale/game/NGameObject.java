@@ -60,6 +60,11 @@ public class NGameObject {
 	public void setCollidable(boolean collidable) { this.collidable = collidable; }
 	public void setGravity(boolean gravity) { this.gravity = gravity; }
 	
+	public void setCoordsByCenter(float cx, float cy) {
+		setX(cx - getWidth()/2);
+		setY(cy - getHeight()/2);
+	}
+	
 	// Constructors
 	public NGameObject() {
 		this.x = 0;
