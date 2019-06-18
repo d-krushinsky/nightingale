@@ -1,10 +1,13 @@
 package nightingale.game.map;
 
 import nightingale.algorithms.pathfinding.Node;
+import nightingale.game.phys.NHitbox;
 import nightingale.util.NCamera;
 
 public class NMapTile extends Node{
 
+	protected NHitbox hitbox = null;
+	
 	protected float x, y;
 	protected float width, height;
 	
@@ -26,6 +29,8 @@ public class NMapTile extends Node{
 	public float getHeight() { return height; }
 	public float getHeight(NCamera cam) { return cam.scale(getHeight()); }
 	
+	public NHitbox getHitbox() { return hitbox; }
+	
 	// Setters
 	public void setX(float x) { this.x = x; }
 	public void setX(float x, NCamera cam) { this.x = cam.returnX(x); }
@@ -38,6 +43,8 @@ public class NMapTile extends Node{
 	
 	public void setHeight(float height) { this.height = height; }
 	public void setHeight(float height, NCamera cam) { this.height = cam.unscale(height); }
+	
+	public void setHitbox(NHitbox hitbox) { this.hitbox = hitbox; }
 	
 	public NMapTile(int type, int i, int j) {
 		super(i, j, true);
