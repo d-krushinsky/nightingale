@@ -14,6 +14,8 @@ public class NRectHitbox extends NHitbox{
 		
 		for(int i=0;i<points.length;i++)
 			points[i] = new NHitboxPoint(0, 0);
+		for(int i=0;i<lines.length;i++)
+			lines[i] = new NHitboxLine(null, null);
 		
 		R = (float)Math.sqrt( Math.pow(width/2 , 2) + Math.pow(height/2, 2) );
 		update();
