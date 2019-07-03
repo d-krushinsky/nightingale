@@ -33,6 +33,8 @@ public class NAnimator {
 		this.animationSpeed = speedInSeconds;
 	}
 	
+	public void setSpeed(float speed) { this.animationSpeed = speed; }
+	
 	public NAnimator(NSprite sprite, float speedInSeconds) {
 		this.sprite = sprite;
 		this.animation = sprite.getAnimation(0);
