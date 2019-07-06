@@ -44,7 +44,14 @@ public class NText {
 		width = (int)(width*m);
 		height = (int)(height*m);
 		for(int i=0;i<symbols.length;i++)
-			symbols[i] = NImageFactory.resize(symbols[i],	width, height, Image.SCALE_SMOOTH);
+			symbols[i] = NImageFactory.resize(symbols[i], width, height, Image.SCALE_AREA_AVERAGING);
+	}
+	
+	public void expand(float m, int scale) {
+		width = (int)(width*m);
+		height = (int)(height*m);
+		for(int i=0;i<symbols.length;i++)
+			symbols[i] = NImageFactory.resize(symbols[i], width, height, scale);
 	}
 	
 	public void draw(String text, int x, int y, Graphics g, NCamera cam) {
